@@ -12,7 +12,11 @@ describe("NamesCollection", () => {
     assert.strictEqual(names.count(), 0);
   });
 
-  it("adds a name");
+  it("adds a name", () => {
+    names.add("Alan");
+    assert.strictEqual(names.count(), 1);
+  });
+
   it("returns a random name");
   it("returns an array of a given length, containing random names");
 });
