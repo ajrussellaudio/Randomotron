@@ -16,6 +16,7 @@ NamesCollection.prototype.random = function(count = 1) {
   if (count === 1) {
     return _.sample(this.names);
   }
+  return _.sampleSize(this.names, count);
 };
 
 module.exports = NamesCollection;

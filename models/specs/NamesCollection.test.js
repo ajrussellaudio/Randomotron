@@ -24,5 +24,12 @@ describe("NamesCollection", () => {
     assert.equal("string", typeof randomName);
   });
 
-  it("returns an array of a given length, with random names");
+  it("returns an array of a given length, with random names", () => {
+    const testNames = ["Alan", "Bob", "Charlie", "Dave"];
+    testNames.forEach(name => names.add(name));
+    const randomPair = names.random(2);
+    assert.equal(randomPair.length, 2);
+    assert.equal("string", typeof randomPair[0]);
+    assert.equal("string", typeof randomPair[1]);
+  });
 });
