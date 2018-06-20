@@ -8,8 +8,13 @@ describe("Cohort", () => {
     cohort = new Cohort();
   });
 
-  it("starts empty", () => {
+  it("starts empty by default", () => {
     assert.equal(cohort.count(), 0);
+  });
+
+  it("starts with an array of students", () => {
+    const fullCohort = new Cohort(["Alan", "Bob", "Charlie", "Dave"]);
+    assert.equal(fullCohort.count(), 4);
   });
 
   it("adds a student", () => {

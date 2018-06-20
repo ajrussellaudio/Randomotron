@@ -1,7 +1,7 @@
 const _ = require("lodash");
 
-const Cohort = function() {
-  this.students = [];
+const Cohort = function(students) {
+  this.students = students || [];
 };
 
 Cohort.prototype.count = function() {
