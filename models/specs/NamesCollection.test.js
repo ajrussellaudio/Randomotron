@@ -32,4 +32,24 @@ describe("NamesCollection", () => {
     assert.equal("string", typeof randomPair[0]);
     assert.equal("string", typeof randomPair[1]);
   });
+
+  it("returns an array of random groups", () => {
+    const testNames = ["Alan", "Bob", "Charlie", "Dave", "Ellie", "Frank"];
+    testNames.forEach(name => names.add(name));
+    const randomGroups = names.groups(2);
+    assert.equal(randomGroups.length, 3);
+    assert.equal(randomGroups[0].length, 2);
+    assert.equal(randomGroups[1].length, 2);
+    assert.equal(randomGroups[2].length, 2);
+  });
+
+  it("returns an array of random groups, odd size", () => {
+    const testNames = ["Alan", "Bob", "Charlie", "Dave", "Ellie"];
+    testNames.forEach(name => names.add(name));
+    const randomGroups = names.groups(2);
+    assert.equal(randomGroups.length, 3);
+    assert.equal(randomGroups[0].length, 2);
+    assert.equal(randomGroups[1].length, 2);
+    assert.equal(randomGroups[2].length, 1);
+  });
 });

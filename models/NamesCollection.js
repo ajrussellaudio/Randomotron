@@ -13,10 +13,11 @@ NamesCollection.prototype.add = function(name) {
 };
 
 NamesCollection.prototype.random = function(count = 1) {
-  if (count === 1) {
-    return _.sample(this.names);
-  }
-  return _.sampleSize(this.names, count);
+  return count === 1 ? _.sample(this.names) : _.sampleSize(this.names, count);
+};
+
+NamesCollection.prototype.groups = function(groupSize) {
+  return _.chunk(_.shuffle(this.names), groupSize);
 };
 
 module.exports = NamesCollection;
