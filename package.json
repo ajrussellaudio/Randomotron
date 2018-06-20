@@ -4,14 +4,17 @@
   "description": "An app for grouping names into random, uh, groups",
   "main": "index.js",
   "scripts": {
-    "test": "mocha models/specs"
+    "test": "mocha models/specs",
+    "start": "nodemon server.js"
   },
   "author": "Alan Russell",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "lodash": "^4.17.10"
   }
 }
