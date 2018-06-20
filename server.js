@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const router = new express.Router();
 const port = process.env.PORT || 3000;
 
 const MongoClient = require("mongodb").MongoClient;
@@ -11,9 +12,7 @@ MongoClient.connect(
     const db = client.db("randomotron");
     console.log("Connected to db...");
 
-    app.get("/api/groups", (req, res, next) => {
-      res.send(`cohort.groups(${req.query.size})`);
-    });
+    app.use("/api/groups", require("./routes/groups"));
 
     app.listen(port, () => {
       console.log(`App listening on ${port}`);

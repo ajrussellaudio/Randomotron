@@ -9,7 +9,7 @@ MongoClient.connect(
       return;
     }
     const db = client.db("randomotron");
-    const cohort = db.collection("cohort");
+    const cohort = db.collection("students");
     cohort.remove({}, () => console.log("Previous data removed"));
 
     const studentNames = ["Alan", "Bob", "Charlie", "Dave"];
