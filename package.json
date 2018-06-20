@@ -4,8 +4,11 @@
   "description": "An app for grouping names into random, uh, groups",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha models/specs"
   },
   "author": "Alan Russell",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
