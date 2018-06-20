@@ -17,6 +17,12 @@ describe("NamesCollection", () => {
     assert.equal(names.count(), 1);
   });
 
-  it("returns a random name");
-  it("returns an array of a given length, containing random names");
+  it("returns a random name", () => {
+    names.add("Alan");
+    names.add("Bob");
+    const randomName = names.random();
+    assert.equal("string", typeof randomName);
+  });
+
+  it("returns an array of a given length, with random names");
 });
