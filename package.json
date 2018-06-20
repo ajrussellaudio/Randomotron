@@ -1,0 +1,11 @@
+{
+  "name": "randomotron",
+  "version": "0.1.0",
+  "description": "An app for grouping names into random, uh, groups",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan Russell",
+  "license": "ISC"
+}
