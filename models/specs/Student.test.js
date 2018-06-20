@@ -5,10 +5,14 @@ describe("Student", () => {
   let student;
 
   beforeEach(() => {
-    student = new Student("Alan");
+    student = new Student("Alan", "E6");
   });
 
   it("has a name", () => {
     assert.equal(student.name, "Alan");
+  });
+
+  it("has a cohort", () => {
+    assert.equal(student.cohort, "E6");
   });
 });

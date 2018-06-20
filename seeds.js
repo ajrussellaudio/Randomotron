@@ -13,7 +13,7 @@ MongoClient.connect(
     cohort.remove({}, () => console.log("Previous data removed"));
 
     const studentNames = ["Alan", "Bob", "Charlie", "Dave"];
-    cohort.insert(studentNames.map(name => new Student(name)), () => {
+    cohort.insert(studentNames.map(name => new Student(name, "G1")), () => {
       console.log("Database successfully seeded");
       client.close();
     });

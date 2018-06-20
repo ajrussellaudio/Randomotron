@@ -1,5 +1,6 @@
-const Student = function(name) {
+const Student = function(name, cohort) {
   this.name = name;
+  this.cohort = cohort;
 };
 
 module.exports = Student;
