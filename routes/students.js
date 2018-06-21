@@ -19,11 +19,20 @@ students.get("/:id", (req, res, next) => {
 });
 
 students.post("/", (req, res, next) => {
-  console.log(req.body);
-  const newStudent = new Student(req.body.name, req.body.cohort);
   const students = req.app.locals.students;
+  const newStudent = new Student(req.body.name, req.body.cohort);
   students.insert(newStudent, (err, result) => {
+    if (err) next(err);
     res.status(201).json(result.ops[0]);
+  });
+});
+
+students.delete("/:id", (req, res, next) => {
+  const students = req.app.locals.students;
+  const id = new ObjectID(req.params.id);
+  students.remove({ _id: id }, (err, result) => {
+    if (err) next(err);
+    res.status(204).send();
   });
 });
 
