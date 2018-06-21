@@ -12,8 +12,45 @@ MongoClient.connect(
     const cohort = db.collection("students");
     cohort.remove({}, () => console.log("Previous data removed"));
 
-    const studentNames = ["Alan", "Bob", "Charlie", "Dave"];
-    cohort.insert(studentNames.map(name => new Student(name, "G1")), () => {
+    const g5Names = [
+      "Sarah",
+      "Kelsie",
+      "Liam",
+      "Daniel",
+      "Brian",
+      "Roberto",
+      "Ruaridh",
+      "Edward",
+      "Paul",
+      "Andrew",
+      "Callum",
+      "Chris",
+      "Fraser",
+      "Lyle",
+      "Stuart",
+      "Connor",
+      "Nikhil",
+      "Scott"
+    ];
+
+    const g4Names = [
+      "Jean",
+      "Jim",
+      "Graeme",
+      "Sarah",
+      "Victor",
+      "Daniel",
+      "J",
+      "Debbie",
+      "Daniel",
+      "Eleftheria",
+      "Christie",
+      "Angus",
+      "Elanor"
+    ];
+
+    cohort.insert(g5Names.map(name => new Student(name, "G5")));
+    cohort.insert(g4Names.map(name => new Student(name, "G4")), () => {
       console.log("Database successfully seeded");
       client.close();
     });
