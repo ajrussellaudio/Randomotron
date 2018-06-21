@@ -15,4 +15,9 @@ describe("Student", () => {
   it("has a cohort", () => {
     assert.equal(student.cohort, "E6");
   });
+
+  it("always has an upper case cohort", () => {
+    const student = new Student("Bob", "g1");
+    assert.equal(student.cohort, "G1");
+  });
 });
