@@ -32,7 +32,17 @@ students.delete("/:id", (req, res, next) => {
   const id = new ObjectID(req.params.id);
   students.remove({ _id: id }, (err, result) => {
     if (err) next(err);
-    res.status(204).send();
+    res.status(200).json(result);
+  });
+});
+
+students.post("/:id", (req, res, next) => {
+  const students = req.app.locals.students;
+  const id = new ObjectID(req.params.id);
+  const newStudent = new Student(req.body.name, req.body.cohort);
+  students.update({ _id: id }, newStudent, (err, result) => {
+    if (err) next(err);
+    res.status(200).json(result);
   });
 });
 
