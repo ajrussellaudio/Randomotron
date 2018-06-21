@@ -13,6 +13,7 @@ MongoClient.connect(
     console.log("Connected to db...");
 
     app.use("/api/groups", require("./routes/groups"));
+    app.use("/api/cohorts", require("./routes/cohorts"));
 
     app.listen(port, () => {
       console.log(`App listening on ${port}`);
