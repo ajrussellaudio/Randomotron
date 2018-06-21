@@ -15,6 +15,7 @@ MongoClient.connect(
 
     app.locals.students = db.collection("students");
 
+    app.use("/api/students", require("./routes/students"));
     app.use("/api/groups", require("./routes/groups"));
     app.use("/api/cohorts", require("./routes/cohorts"));
 
