@@ -4,7 +4,10 @@ const ObjectID = require("mongodb").ObjectID;
 
 students.get("/", (req, res, next) => {
   const students = req.app.locals.students;
-  students.find().toArray((err, students) => {
+  const byCohort = req.query.cohort
+    ? { cohort: req.query.cohort.toUpperCase() }
+    : {};
+  students.find(byCohort).toArray((err, students) => {
     if (err) next(err);
     res.json(students);
   });
