@@ -42,6 +42,7 @@ students.delete("/:id", (req, res, next) => {
 students.post("/:id", (req, res, next) => {
   const students = req.app.locals.students;
   const id = new ObjectID(req.params.id);
+  console.log(req.body);
   const newStudent = new Student(req.body.name, req.body.cohort);
   students.update({ _id: id }, newStudent, (err, result) => {
     if (err) next(err);

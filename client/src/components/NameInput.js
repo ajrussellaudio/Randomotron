@@ -22,7 +22,7 @@ const Form = styled.form`
 `;
 
 class NameInput extends React.Component {
-  state = { name: this.props.name };
+  state = { ...this.props };
 
   handleTyping = event => {
     this.setState({ name: event.target.value });
@@ -45,9 +45,7 @@ class NameInput extends React.Component {
 
   save = () => {
     const url = `/api/students/${this.props._id}`;
-    ApiRequest.post(url, response => {
-      console.log(response);
-    });
+    ApiRequest.post(url, this.state);
   };
 
   render() {

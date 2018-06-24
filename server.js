@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const router = new express.Router();
 const parser = require("body-parser");
 const port = process.env.PORT || 3000;
@@ -7,6 +8,7 @@ const port = process.env.PORT || 3000;
 const MongoClient = require("mongodb").MongoClient;
 let db;
 
+app.use(cors());
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 

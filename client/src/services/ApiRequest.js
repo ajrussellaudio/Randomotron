@@ -1,14 +1,23 @@
+const { proxy } = require("../../package.json");
+
 const ApiRequest = {};
 
-ApiRequest.post = (url, next) => {
+ApiRequest.get = (url, next) => {
+  fetch(url)
+    .then(res => res.json())
+    .then(response => next(response));
+};
+
+ApiRequest.post = (url, payload, next = () => {}) => {
   const req = new XMLHttpRequest();
-  req.open("post", url);
+  req.open("post", proxy + url);
+  req.setRequestHeader("Content-Type", "application/json");
   req.addEventListener("load", () => {
     if (req.status !== 201) return;
     const response = JSON.parse(req.response);
     next(response);
   });
-  req.send();
+  req.send(JSON.stringify(payload));
 };
 
 export default ApiRequest;

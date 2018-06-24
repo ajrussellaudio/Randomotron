@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import StudentList from "./containers/StudentList";
 
 class App extends Component {
   render = () => {
     return (
       <div className="App">
-        <h1>Random-O-Tron</h1>
+        <StudentList cohort="g4" />
       </div>
     );
   };
