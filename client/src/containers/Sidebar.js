@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ApiRequest from "../services/ApiRequest";
 import CohortSelect from "../components/CohortSelect";
+import StudentListContainer from "./StudentListContainer";
 
-const Container = styled.div`
-  background-color: chartreuse;
-`;
+const Container = styled.div``;
 
 class Sidebar extends React.Component {
   state = { cohorts: [] };
@@ -21,6 +20,7 @@ class Sidebar extends React.Component {
     return (
       <Container>
         <CohortSelect {...this.state} {...this.props} />
+        <StudentListContainer cohort={this.props.cohort} />
       </Container>
     );
   }
