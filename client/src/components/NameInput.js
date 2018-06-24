@@ -6,15 +6,12 @@ import ApiRequest from "../services/ApiRequest";
 
 const StyledInput = styled.input`
   margin: 0;
-  padding: 0 5px;
+  padding: 5px;
   display: inline;
   border: 0;
-  width: 100px;
+  width: 6em;
   font-size: 1em;
   font-family: sans-serif;
-  &:focus {
-    outline: none;
-  }
 `;
 
 const Form = styled.form`

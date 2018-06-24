@@ -1,6 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 import StudentListItem from "../components/StudentListItem";
 import ApiRequest from "../services/ApiRequest";
+
+const ListContainer = styled.div`
+  width: 17%;
+`;
 
 class StudentList extends React.Component {
   state = {
@@ -13,9 +18,13 @@ class StudentList extends React.Component {
   }
 
   render() {
-    return this.state.students.map(student => (
-      <StudentListItem key={student._id} {...student} />
-    ));
+    return (
+      <ListContainer>
+        {this.state.students.map(student => (
+          <StudentListItem key={student._id} {...student} />
+        ))}
+      </ListContainer>
+    );
   }
 }
 

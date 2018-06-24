@@ -15,11 +15,15 @@ const Controls = styled.div`
   }
 `;
 
+const deleteStudent = id => {
+  console.log(`deleting id:`, id);
+};
+
 const StudentListItem = props => (
   <ListItemBox>
     <NameInput {...props} />
     <Controls>
-      <Icon icon={faTimesCircle} onClick={() => console.log("deleting...")} />
+      <Icon icon={faTimesCircle} onClick={() => deleteStudent(props._id)} />
     </Controls>
   </ListItemBox>
 );
