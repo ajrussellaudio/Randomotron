@@ -7,7 +7,7 @@ cohorts.get("/", (req, res, next) => {
   students.find().toArray((err, students) => {
     if (err) next(err);
     const cohorts = _.uniq(students.map(student => student.cohort));
-    res.json({ cohorts: cohorts });
+    res.json(cohorts);
   });
 });
 
