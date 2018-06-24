@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import StudentList from "./components/StudentList";
 import Sidebar from "./containers/Sidebar";
+import Randomiser from "./containers/Randomiser";
 
 const GridLayout = styled.div`
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 20% 80%;
 `;
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
   render = () => (
     <GridLayout>
       <Sidebar {...this.state} onCohortChange={this.handleCohortChange} />
-      <StudentList students={[]} />
+      <Randomiser {...this.state} />
     </GridLayout>
   );
 }
