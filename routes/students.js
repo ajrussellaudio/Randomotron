@@ -45,7 +45,7 @@ students.post("/:id", (req, res, next) => {
   const newStudent = new Student(req.body.name, req.body.cohort);
   students.update({ _id: id }, newStudent, (err, result) => {
     if (err) next(err);
-    res.status(200).json(result);
+    res.status(201).json(result);
   });
 });
 

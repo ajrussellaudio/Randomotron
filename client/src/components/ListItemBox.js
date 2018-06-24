@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default styled.div`
-  padding: 4px;
+  padding: 9px;
   margin: 20px;
   width: 200px;
   height: 38px;

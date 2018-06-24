@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import ApiRequest from "../services/ApiRequest";
 
 const StyledInput = styled.input`
   margin: 0;
@@ -21,22 +24,37 @@ const Form = styled.form`
 class NameInput extends React.Component {
   state = { name: this.props.name };
 
-  handleChange = event => {
+  handleTyping = event => {
     this.setState({ name: event.target.value });
   };
 
-  save = event => {
+  handleNameChange = event => {
     event.preventDefault();
-    console.log(`saving ${this.state.name} as ${this.props._id}`);
+    if (
+      event.target.name &&
+      event.target.value !== this.props.name &&
+      event.target.name.value !== this.props.name
+    ) {
+      this.save();
+    }
+  };
+
+  save = () => {
+    const url = `/api/students/${this.props._id}`;
+    ApiRequest.post(url, response => {
+      console.log(response);
+    });
   };
 
   render() {
     return (
-      <Form onSubmit={this.save}>
+      <Form onSubmit={this.handleNameChange}>
+        <Icon icon={faUserCircle} />{" "}
         <StyledInput
+          name="name"
           value={this.state.name || ""}
-          onChange={this.handleChange}
-          onBlur={this.save}
+          onChange={this.handleTyping}
+          onBlur={this.handleNameChange}
         />
       </Form>
     );
