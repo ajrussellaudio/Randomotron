@@ -30,13 +30,17 @@ class NameInput extends React.Component {
 
   handleNameChange = event => {
     event.preventDefault();
-    if (
-      event.target.name &&
-      event.target.value !== this.props.name &&
-      event.target.name.value !== this.props.name
-    ) {
+    if (this.nameHasChanged(event.target)) {
       this.save();
     }
+  };
+
+  nameHasChanged = input => {
+    return (
+      input.name &&
+      input.value !== this.props.name &&
+      input.name.value !== this.props.name
+    );
   };
 
   save = () => {
