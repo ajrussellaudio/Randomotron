@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import StudentList from "./containers/StudentList";
+import StudentList from "./components/StudentList";
 
 class App extends Component {
   render = () => {
     return (
       <div className="App">
-        <StudentList cohort="g4" />
+        <StudentList students={[]} />
       </div>
     );
   };

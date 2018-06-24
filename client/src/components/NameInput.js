@@ -9,9 +9,8 @@ const StyledInput = styled.input`
   padding: 5px;
   display: inline;
   border: 0;
-  width: 6em;
   font-size: 1em;
-  font-family: sans-serif;
+  font-family: inherit;
 `;
 
 const Form = styled.form`
