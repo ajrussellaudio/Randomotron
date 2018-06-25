@@ -13,7 +13,7 @@ const GroupList = styled.ul`
 
 const Member = styled.li`
   display: inline;
-  font-size: 2em;
+  font-size: 2.5em;
   padding: 16px;
 `;
 
