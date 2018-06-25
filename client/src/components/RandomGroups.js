@@ -3,7 +3,9 @@ import styled from "styled-components";
 import ApiRequest from "../services/ApiRequest";
 import Group from "./Group";
 
-const GroupsContainer = styled.div``;
+const GroupsContainer = styled.div`
+  text-align: center;
+`;
 
 class RandomGroups extends React.Component {
   state = { groups: [] };

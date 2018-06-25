@@ -1,12 +1,6 @@
 import React from "react";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
-import styled from "styled-components";
+import StyledDropdown from "./StyledDropdown";
 import { concat } from "lodash";
-
-const StyledDropdown = styled(Dropdown)`
-  margin: 6px;
-`;
 
 const newCohort = { label: "New Cohort...", value: null };
 

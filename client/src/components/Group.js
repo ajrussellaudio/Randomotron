@@ -9,6 +9,8 @@ const GroupList = styled.ul`
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #333333;
+  color: white;
 `;
 
 const Member = styled.li`

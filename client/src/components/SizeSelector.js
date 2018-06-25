@@ -1,6 +1,5 @@
 import React from "react";
-import Dropdown from "react-dropdown";
-import styled from "styled-components";
+import StyledDropdown from "./StyledDropdown";
 import { find } from "lodash";
 
 const options = [
@@ -9,11 +8,6 @@ const options = [
   { value: 3, label: "Triple Threat" },
   { value: 4, label: "Fatal Four-way" }
 ];
-
-const StyledDropdown = styled(Dropdown)`
-  margin: 6px;
-  border-radius: 8px;
-`;
 
 const SizeSelector = ({ size, onChange }) => (
   <StyledDropdown

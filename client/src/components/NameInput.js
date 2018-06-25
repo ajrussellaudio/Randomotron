@@ -14,6 +14,7 @@ const StyledInput = styled.input`
   max-width: 20rem;
   font-size: 1em;
   font-family: inherit;
+  color: inherit;
 `;
 
 const Form = styled.form`
