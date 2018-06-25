@@ -1,5 +1,3 @@
-const { proxy } = require("../../package.json");
-
 const ApiRequest = {};
 
 ApiRequest.get = (url, next) => {
@@ -9,15 +7,14 @@ ApiRequest.get = (url, next) => {
 };
 
 ApiRequest.post = (url, payload, next = () => {}) => {
-  const req = new XMLHttpRequest();
-  req.open("post", proxy + url);
-  req.setRequestHeader("Content-Type", "application/json");
-  req.addEventListener("load", () => {
-    if (req.status !== 201) return;
-    const response = JSON.parse(req.response);
-    next(response);
-  });
-  req.send(JSON.stringify(payload));
+  const options = {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" }
+  };
+  fetch(url, options)
+    .then(res => res.json())
+    .then(response => next(response));
 };
 
 export default ApiRequest;
