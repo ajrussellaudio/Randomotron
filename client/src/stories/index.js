@@ -6,6 +6,7 @@ import { linkTo } from "@storybook/addon-links";
 
 import StudentListItem from "../components/StudentListItem";
 import StudentList from "../components/StudentList";
+import Group from "../components/Group";
 
 const studentData = { name: "Alan", cohort: "E6", _id: "fake id" };
 const fakeStudents = [
@@ -21,4 +22,8 @@ storiesOf("StudentListItem", module).add("normal", () => (
 
 storiesOf("StudentList", module).add("normal", () => (
   <StudentList students={fakeStudents} />
+));
+
+storiesOf("Group", module).add("normal", () => (
+  <Group members={fakeStudents} />
 ));
